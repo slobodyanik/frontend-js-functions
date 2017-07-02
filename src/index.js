@@ -1,43 +1,53 @@
-﻿function f1() {
-	var sum = 0;
+﻿function sum() {
+	var sumOfNum = 0;
 	for (var i = 0; i < arguments.length; i++) {
 		if (typeof arguments[i] !== 'number')
 			continue
-		sum = sum + arguments[i]
+		sumOfNum = sumOfNum + arguments[i]
 
 	}
-	console.log(sum);
+	return sumOfNum;
 }
-f1(48, 351, 56, 30, 85, 96);
+function min(array) {
+    var minNum;
+    var index;
 
-function max(Array) {
-	
-	if (Array === undefined) {
-		return;
-	} else {
+    if (array === undefined) {
+        return;
+    } else {
+        for (index = 0; index < array.length; index += 1) {
+            if (typeof (array[index]) == 'number') {
+                if (minNum === undefined) {
+                    minNum = array[index];
+                    continue;
+                }
+                if (minNum >= array[index]) {
+                    minNum = array[index];
+                }
+            }
+        }
+        return minNum;
 
-
-		var MaxNum = Array[0];
-		for ( var i = 0; i < Array.length; i++) {
-			if (Array[i] >= MaxNum) {
-				MaxNum = Array[i];
-			}
-
-		}
-		return MaxNum;
-	}
+    }
 }
-max([98, 93, 75, 73, 6666]);
+function max(array) {
+    var maxNum;
+    var index;
 
+    if (array === undefined) {
+        return;
+    } else {
+        maxNum = array[0];
 
+        for (index = 0; index < array.length; index += 1) {
+            if (array[index] >= maxNum) {
+                maxNum = array[index];
+            }
 
-// function min(array) {
-// var MinNum = Array[0];
-// for(var i = 0; i < Array.length; i++);
-// if (Array[i] < MinNum){
-// 	MinNum = Array[i]
-// }
-// }
+        }
+        return maxNum;
+    }
+}
 
 
 
